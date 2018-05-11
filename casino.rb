@@ -1,24 +1,32 @@
 require 'pry'
 require_relative 'high_low'
+require_relative 'coin'
 
 class Casino
   attr_accessor :name
   def initialize
     puts "Welcome to the best Casino in Salt Lake"
-    Player.new
+
+    @cats = Player.new
     enter
   end
 
   def enter
     puts "Casino Games"
     puts "1) High or Low"
+    puts "2) Coin"
+    puts "Check bankroll"
     puts "Choose one"
     choice = gets.strip
     case choice
-      when "1"
-        BrainTeaser.new
-      else
-        enter
+    when "1"
+      BrainTeaser.new
+    when "2"
+     Coin.new(@cats.name,@cats.bankroll)
+    when "3"
+     puts @cats.bankroll 
+    else
+      enter
     end
     enter
   end
@@ -32,8 +40,11 @@ class Player
     @name = gets.strip
 
     puts "How old are you?"
-    @age = gets.strip
-
+    @age = gets.to_i
+    if @age < 18
+      puts "Take a hike kid!"
+      Casino.new
+    end
     puts "How much money do you have?"
     @bankroll = gets.to_i
 
