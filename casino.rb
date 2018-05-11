@@ -4,13 +4,9 @@ require_relative 'high_low'
 class Casino
   attr_accessor :name
   def initialize
+    puts "Welcome to the best Casino in Salt Lake"
     Player.new
     enter
-  end
-
-  def greeting
-    puts "Welcome to the best Casino in Salt Lake"
-    puts "What is your name?"
   end
 
   def enter
@@ -19,26 +15,32 @@ class Casino
     puts "Choose one"
     choice = gets.strip
     case choice
-    when "1"
-      BrainTeaser.new
-    else
-      enter
+      when "1"
+        BrainTeaser.new
+      else
+        enter
     end
+    enter
   end
+
 end
 
 class Player
-  attr_accessor :name, :age, :bankroll
+  attr_accessor :name, :age, :bankroll, :enter
   def initialize
     puts "What is your name?"
     @name = gets.strip
-    puts @name
+
     puts "How old are you?"
     @age = gets.strip
-    puts @age
+
     puts "How much money do you have?"
     @bankroll = gets.to_i
+
+    puts @name
+    puts @age
     puts @bankroll
+
   end
 end
 

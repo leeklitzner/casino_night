@@ -1,19 +1,23 @@
 require 'pry'
 class BrainTeaser
   attr_accessor :arr
+
   def initialize
     @arr = []
     start_player
   end
+
   def decor
     puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%"
   end
+
   def fill_array
     puts "Add a number in your array."
     number = gets.to_i
     @arr << number
     menu
   end
+
   def view_array
     @arr.each do |n|
       puts n
@@ -21,6 +25,7 @@ class BrainTeaser
     decor
     menu
   end
+
   def get_the_lowest
     y = @arr[0]
     @arr.each do |x|
@@ -33,6 +38,7 @@ class BrainTeaser
     decor
     menu
   end
+
   def get_the_highest
     y = @arr[0]
     @arr.each do |x|
@@ -45,15 +51,19 @@ class BrainTeaser
     decor
     menu
   end
-  def initial_menu
+
+  # def initial_menu
+  #
+  # end
+
+  def start_player
     puts "Welcome to Your array."
     decor
-    input_times = 1
-    while input_times <= 3
     fill_array
-    input_times += 1
-    end
+    # menu
   end
+
+
   def menu
     puts "===== Options =======
     1) Add a number
@@ -78,15 +88,14 @@ class BrainTeaser
         decor
       when 5
         puts "See you again"
-        Casino.new
+
+        # Casino.enter
+
       else
         puts "Invalid entry. Please choose from menu."
         menu
       end
   end
-  def start_player
-    initial_menu
-    menu
-  end
+
 end
 #BrainTeaser.new
