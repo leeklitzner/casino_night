@@ -67,7 +67,7 @@ class Guessing
     when "y"
       run
     when "n"
-      "See you soon."
+      puts "See you soon."
     else
       puts "Invalid entry."
       guess_again

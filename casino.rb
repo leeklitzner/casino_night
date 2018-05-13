@@ -1,6 +1,7 @@
 require 'pry'
 require_relative 'high_low'
 require_relative 'coin'
+require_relative 'guessing_game'
 
 class Casino
   attr_accessor :name, :player
@@ -23,7 +24,7 @@ class Casino
       when "2"
         Coin.new(@player.name, @player.bankroll)
       when "3"
-        Guessing.new(@cats.name,@cats.bankroll)
+        Guessing.new(@player.name, @player.bankroll)
       else
         puts "Invalid entry please choose from menu"
         enter
