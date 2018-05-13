@@ -7,7 +7,6 @@ class Horserace
 	    @name = name
 		@wallet = wallet
 	    game_menu
-        to_casino
 	end
  #=======================================================================
 	def game_menu
