@@ -6,34 +6,15 @@ class Casino
   attr_accessor :name, :player
   def initialize
     puts "Welcome to the best Casino in Salt Lake"
-<<<<<<< HEAD
-
-    @cats = Player.new
-=======
     @player = Player.new
->>>>>>> changes
     enter
   end
 
   def enter
     puts "Casino Games"
     puts "1) High or Low"
-<<<<<<< HEAD
-    puts "2) Coin"
-    puts "Check bankroll"
-    puts "Choose one"
-    choice = gets.strip
-    case choice
-    when "1"
-      BrainTeaser.new
-    when "2"
-     Coin.new(@cats.name,@cats.bankroll)
-    when "3"
-     puts @cats.bankroll 
-    else
-      enter
-=======
     puts "2) Coin Game"
+    puts "3) Guessing Game"
     puts "Choose one"
     choice = gets.strip
     case choice
@@ -41,9 +22,11 @@ class Casino
         BrainTeaser.new
       when "2"
         Coin.new(@player.name, @player.bankroll)
+      when "3"
+        Guessing.new(@cats.name,@cats.bankroll)
       else
+        puts "Invalid entry please choose from menu"
         enter
->>>>>>> changes
     end
     enter
   end
