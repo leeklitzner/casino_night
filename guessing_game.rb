@@ -12,9 +12,9 @@ class Guessing
   end
 
   def run
-    puts "Choose a number between 1 to 100: "
+    puts "Choose a number between 1 to 50: "
     usernum = gets.to_i
-    number = rand(100)
+    number = rand(50)
     puts number
     case number
     when "usernum"
