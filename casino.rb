@@ -3,17 +3,22 @@ require_relative 'high_low'
 require_relative 'coin'
 
 class Casino
-  attr_accessor :name
+  attr_accessor :name, :player
   def initialize
     puts "Welcome to the best Casino in Salt Lake"
+<<<<<<< HEAD
 
     @cats = Player.new
+=======
+    @player = Player.new
+>>>>>>> changes
     enter
   end
 
   def enter
     puts "Casino Games"
     puts "1) High or Low"
+<<<<<<< HEAD
     puts "2) Coin"
     puts "Check bankroll"
     puts "Choose one"
@@ -27,6 +32,18 @@ class Casino
      puts @cats.bankroll 
     else
       enter
+=======
+    puts "2) Coin Game"
+    puts "Choose one"
+    choice = gets.strip
+    case choice
+      when "1"
+        BrainTeaser.new
+      when "2"
+        Coin.new(@player.name, @player.bankroll)
+      else
+        enter
+>>>>>>> changes
     end
     enter
   end
@@ -48,9 +65,9 @@ class Player
     puts "How much money do you have?"
     @bankroll = gets.to_i
 
-    puts @name
-    puts @age
-    puts @bankroll
+    # puts @name
+    # puts @age
+    # puts @bankroll
 
   end
 end
@@ -65,12 +82,12 @@ end
 #   end
 # end
 
-class Wallet
-  attr_accessor :amount
-  def initialize
-    puts "How much money do you have?"
-    @amount = gets.to_f
-  end
-end
+# class Wallet
+#   attr_accessor :amount
+#   def initialize
+#     puts "How much money do you have?"
+#     @amount = gets.to_f
+#   end
+# end
 
 Casino.new
