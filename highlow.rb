@@ -42,6 +42,7 @@ class High_Low
     end
 
     if @give_card == @next_card
+      puts "Getting next card for you."
       choose_next_card
     else
       next_c
@@ -99,6 +100,8 @@ class High_Low
     when "y"
       run
     when "n"
+      # binding.pry
+
       puts "Good bye."
     else
       puts "Invalid entry."
@@ -108,6 +111,7 @@ class High_Low
 
 
   def run
+    # @player1 = Player.new
     give
     puts "Is next card High or Low than your card? h/l"
     @choice = gets.strip.downcase
