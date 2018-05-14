@@ -6,7 +6,7 @@ require_relative 'horse_race'
 
 class Player
   attr_accessor :name, :age, :bankroll, :enter
- 
+
   def initialize
     puts "What is your name?"
     @name = gets.strip
@@ -39,6 +39,7 @@ class Casino
     puts "2) Coin Game"
     puts "3) Guessing Game"
     puts "4) Horse Race"
+    puts "5) Rock, Paper, Scissors"
     puts "Choose one"
     choice = gets.strip
     case choice
@@ -50,6 +51,8 @@ class Casino
         Guessing.new(@player.name, @player.bankroll)
       when "4"
         Horserace.new(@player.name, @player.bankroll)
+      when "5"
+        RPS.new(@player.name, @player.bankroll)
       else
         puts "Invalid entry please choose from menu"
         enter
