@@ -1,5 +1,5 @@
 require 'pry'
-require_relative 'high_low'
+require_relative 'highlow'
 require_relative 'coin'
 require_relative 'guessing_game'
 require_relative 'horse_race'
@@ -40,11 +40,12 @@ class Casino
     puts "3) Guessing Game"
     puts "4) Horse Race"
     puts "5) Rock, Paper, Scissors"
+    puts "6) Exit"
     puts "Choose one"
     choice = gets.strip
     case choice
       when "1"
-        BrainTeaser.new
+        High_Low.new(@player.name, @player.bankroll)
       when "2"
         Coin.new(@player.name, @player.bankroll)
       when "3"
@@ -53,6 +54,9 @@ class Casino
         Horserace.new(@player.name, @player.bankroll)
       when "5"
         RPS.new(@player.name, @player.bankroll)
+      when "6"
+        puts "See you soon."
+        exit
       else
         puts "Invalid entry please choose from menu"
         enter
