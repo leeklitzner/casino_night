@@ -3,10 +3,11 @@ require 'pry'
 class High_Low
   attr_accessor :give_card, :next_card, :choice
 
-  def initialize(name, cash)
-    @name = name
-    @cash = cash
-    puts "Welcome to High Low Game #{@name}"
+  def initialize(player)
+    # @name = name
+    # @cash = cash
+    @player = player
+    puts "Welcome to High Low Game #{@player.name}"
     run
   end
 
@@ -53,38 +54,48 @@ class High_Low
     if @choice == "h"
       if @next_card == 1
         puts "you are right."
-        @cash += 10
-        puts @cash
+        # @cash += 10
+        @player.bankroll += 10
+        # puts @cash
+        puts @player.bankroll
       elsif @give_card == 1
         puts "Sorry you are wrong"
-        @cash -= 10
-        puts @cash
+        # @cash -= 10
+        @player.bankroll -= 10
+        puts @player.bankroll
       elsif @give_card < @next_card
         puts "you are right"
-        @cash += 10
-        puts @cash
+        # @cash += 10
+        @player.bankroll += 10
+
+        puts @player.bankroll
       else
         puts "Sorry you are wrong"
-        @cash -= 10
-        puts @cash
+        # @cash -= 10
+        @player.bankroll -= 10
+        puts @player.bankroll
       end
     elsif @choice == 'l'
       if @next_card == 1
         puts "Sorry you are wrong."
-        @cash -= 10
-        puts @cash
+        # @cash -= 10
+        @player.bankroll -= 10
+        puts @player.bankroll
       elsif @give_card == 1
         puts "you are right."
-        @cash += 10
-        puts @cash
+        # @cash += 10
+        @player.bankroll += 10
+        puts @player.bankroll
       elsif @give_card > @next_card
         puts "you are right"
-        @cash += 10
-        puts @cash
+        # @cash += 10
+        @player.bankroll += 10
+        puts @player.bankroll
       else
         puts "Sorry you are wrong"
-        @cash -= 10
-        puts @cash
+        # @cash -= 10
+        @player.bankroll -= 10
+        puts @player.bankroll
       end
        # @give_card > @next_card
     else

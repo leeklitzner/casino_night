@@ -45,11 +45,13 @@ class Casino
     choice = gets.strip
     case choice
       when "1"
-        High_Low.new(@player.name, @player.bankroll)
+        # High_Low.new(@player.name, @player.bankroll)
+        High_Low.new(@player)
       when "2"
         Coin.new(@player.name, @player.bankroll)
       when "3"
-        Guessing.new(@player.name, @player.bankroll)
+        # Guessing.new(@player.name, @player.bankroll)
+        Guessing.new(@player)
       when "4"
         Horserace.new(@player.name, @player.bankroll)
       when "5"

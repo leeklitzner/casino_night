@@ -2,12 +2,14 @@
 require 'pry'
 
 class Guessing
-  attr_accessor :name, :bank
+  # attr_accessor :name, :bank
 
-  def initialize(name, bank)
-    @name = name
-    @bank = bank
-    puts "#{@name}, Let's see if you can guess THE NUMBER."
+  def initialize(player)
+    #name, bank
+    @player = player
+    # @name = player.name
+    # @bank = player.bankroll
+    puts "#{@player.name}, Let's see if you can guess THE NUMBER."
     run
   end
 
@@ -28,9 +30,10 @@ class Guessing
       puts"│▒┌──┘▒▒▒│◯"
       puts"└┐▒▒▒▒▒▒┌┘"
       puts"◯└┐▒▒▒▒┌"
-      @bank = @bank + 5
-      puts @bank
-      puts "You have $#{@bank} in your wallet."
+      # @bank = @bank + 5
+      @player.bankroll += 5
+      # puts @bank
+      puts "You have $#{@player.bankroll} in your wallet."
     else
       puts "You lose."
       puts  "                ░░▄▀░░░░░░░░░░░░░░░▀▀▄▄░░░░░"
@@ -55,8 +58,10 @@ class Guessing
       puts "               ║╔═░╦░╦═╗╦═╗╦╔╗║╔═╗░░╔╦╗╔═╗╔╗"
       puts "               ╠╩╗░║░║░║║░║║║║║║═╗░░║║║╠╣░╔╝"
       puts "               ║░╚░╩░╩═╝╩═╝╩║╚╝╚═╝░░║║║╚═╝▄░"
-      @bank = @bank - 5
-      puts "You have $#{@bank} in your wallet."
+      # @bank = @bank - 5
+      @player.bankroll -= 5
+      puts "You have $#{@player.bankroll} in your wallet."
+      # @bank
     end
     guess_again
   end
